@@ -1,0 +1,68 @@
+spring:
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: true
+
+  config:
+    import: optional:file:./db.env
+
+  application:
+    name: project
+
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  web:
+    resources:
+      static-locations: classpath:/static/,classpath:/public/,file:/usr/tomcat/webapps/ROOT/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.101:3306/bit
+    username: bit
+    password: bit
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: socialquizwebsite@gmail.com
+    password: tabpuahsodkebxqk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+  coolsms:
+    apiKey: NCSH6DKDDSRZ9OVG
+    secretkey: DQ75ZDEW0G2AE3BO2QHWOMUKDEWDCXK8
+
+server:
+  port: 9080
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.project.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+tmdb:
+  api:
+    key: ff91ea6c8c3ef898afc8f92bed76e5da
+
+schedule:
+  movie-fetch: "0 0 3 * * *"
+
+imp:
+  code: imp36514004
+  key: 3181733625564284
+  secret_key: 8wmZ32gZhgZgksSbw5pWUW4VudOi5Via1a22sm1kniIIGDCaoDottSSAxArTHAhE4LfLdFTD3fq1MsFC
